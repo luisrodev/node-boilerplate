@@ -8,8 +8,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use("/health", (req, res) => {
+app.get("/health", (req, res) => {
   return res.status(200).send("Server OK");
 });
 

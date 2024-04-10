@@ -7,6 +7,8 @@ Node ready to use code structure with some lib included.
 - Typescript
 - Nodemon
 - DotEnv
+- Luxon (Wrapper for JavaScript dates and times)
+- Winston (Logger)
 
 ## Getting Started
 
@@ -31,7 +33,7 @@ Always use the flag `-E` to install the exact version of the library, ex: `npm i
 
 Change property `NODE_ENV` from `.env` file to `production` and setup all the other properties to point to production env vars.
 
-Generate a new build for production 
+Generate a new build for production
 ```
 npm run build
 ```
