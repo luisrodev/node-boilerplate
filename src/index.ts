@@ -2,6 +2,7 @@ import { config } from "dotenv";
 import express from "express";
 config();
 import cors from "cors";
+import { log } from "~/lib/logger";
 
 const app = express();
 
@@ -13,7 +14,6 @@ app.use("/health", (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(
-    `Server running on env: ${process.env.NODE_ENV} listen on port: ${process.env.PORT}`
-  );
+  log(`Server running on env: ${process.env.NODE_ENV}`);
+  log(`Server listen on port: ${process.env.PORT}`);
 });
