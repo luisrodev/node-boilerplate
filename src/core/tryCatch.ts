@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 
+import config from "~/config";
 import { log } from "~/lib/logger";
 import { generateErrorResponse } from "~/utils/generateResponse";
 import { AppError } from "~/core/applicationError";
@@ -16,7 +17,7 @@ export const tryCatchRequestHandler = (expressEndpointFn: Function) => {
             generateErrorResponse(
               error.message,
               error.status,
-              process.env.NODE_ENV === "development" ? error.stack : undefined
+              config.isDevelopment ? error.stack : undefined
             )
           );
       }
